@@ -1,0 +1,23 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "photography portfolio",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "csso": "~4.0.3",
+    "csso-cli": "~3.0.0",
+    "html-minifier-terser": "~5.1.0",
+    "terser": "~4.6.13"
+  },
+  "scripts": {
+    "folder": "rm -rf dist && mkdir dist && cp icon.png jquery.event.move.js jquery.twentytwenty.js dist",
+    "css1": "csso style.css --output dist/style.css",
+    "css2": "csso foundation.css --output dist/foundation.css",
+    "css3": "csso twentytwenty.css --output dist/twentytwenty.css",
+    "html": "html-minifier-terser --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --minify-css true --minify-js true index.html --output dist/index.html",
+    "build": "npm run folder && npm run html && npm run css1 && npm run css2 && npm run css3"
+  },
+  "author": "",
+  "license": "ISC"
+}
